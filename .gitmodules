@@ -94,3 +94,6 @@
 	path = third_party/rosettacode-acmeism
 	url = https://github.com/acmeism/RosettaCodeData
 	update = none
+[submodule "grammars/tree-sitter-zsh"]
+	path = grammars/tree-sitter-zsh
+	url = https://github.com/georgeharker/tree-sitter-zsh

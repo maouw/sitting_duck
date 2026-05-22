@@ -76,6 +76,8 @@ template <NativeExtractionStrategy Strategy>
 struct DartNativeExtractor;
 template <NativeExtractionStrategy Strategy>
 struct CSharpNativeExtractor;
+struct ZshNativeExtractor;
+template <NativeExtractionStrategy Strategy>
 
 // Language adapter traits - each adapter defines its extractor type
 template <typename AdapterType>
@@ -105,6 +107,7 @@ class SQLAdapter;
 class CSSAdapter;
 class HTMLAdapter;
 class DartAdapter;
+class ZshAdapter;
 
 // Specializations for each language adapter
 template <>
@@ -221,6 +224,12 @@ struct NativeExtractionTraits<CSharpAdapter> {
 	using ExtractorType = CSharpNativeExtractor<Strategy>;
 };
 
+template <>
+struct NativeExtractionTraits<ZshAdapter> {
+	template <NativeExtractionStrategy Strategy>
+	using ExtractorType = ZshNativeExtractor<Strategy>;
+};
+
 //==============================================================================
 // Main Template Dispatch Function (Zero Virtual Calls)
 //==============================================================================
@@ -324,3 +333,4 @@ string ExtractNodeText(TSNode node, const string &content);
 #include "html_native_extractors.hpp"
 #include "dart_native_extractors.hpp"
 #include "csharp_native_extractors.hpp"
+#include "zsh_native_extractors.hpp"
