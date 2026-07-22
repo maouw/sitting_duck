@@ -217,7 +217,7 @@ GRAMMARS=(
     "graphql:tree-sitter-graphql:false"
     "toml:tree-sitter-toml:true"
     "zig:tree-sitter-zig:false"
-    "dart:tree-sitter-dart:true
+    "dart:tree-sitter-dart:true"
     "zsh:tree-sitter-zsh:true"
 )
 
